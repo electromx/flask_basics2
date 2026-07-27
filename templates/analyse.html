@@ -1,0 +1,45 @@
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>Analysing Info</title>
+			<style>
+				body{
+					{% if "67" in text %}
+					background-color: #FF0080;
+					{% else %}
+					background-color: gold;
+					{% endif %}
+					color: #BC13FE;
+				}
+			</style>
+		</head>
+		
+		<body>
+			{% if "asr" in text.lower() %}
+			<img src="static/asr.jpg" alt="asr" width="400px">
+			{% endif %}	
+			<h1>Text: {{ text }}</h1>
+			<h2>Length of text: {{ length }}</h2>
+			<h2>{{ text|length }}</h2>
+			<h2>Number of digits: {{ num_digits }}</h2>
+			<h2>Number of vowels: {{ num_vowels }}</h2>
+			<h2>Number of consonents: {{num_consonents }}</h2>
+			<ul>
+				{% for char, frequency in char_dict.items() %}
+					{% if frequency == 1 %}
+						<li>{{ char }} appeared once</li>
+					{% else %}
+						<li>{{ char }} appeared {{ frequency }} times</li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+			<ol>
+				{% for word in analysed_texts %}
+					<li>{{ word }}</li>
+				{% endfor %}
+			</ol>
+		</body>
+		
+
+	</html>

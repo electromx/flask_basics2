@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>House info</title>
+		<style>
+			body{
+				background-color: {{ house_colour }};
+				color : white;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Welcome to {{ house }}</h1>
+		<img src="static/{{ house }}.jpg" alt="House" width="250px">
+		<img src="static/{{ house }}_mascot.jpg" alt="House" width="250px">
+		<h2>House points: {{ house_pt }}</h2>
+		<h2>Visited houses {{ visited_houses }}</h2>
+		
+	</body>
+	
+
+</html>
